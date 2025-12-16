@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: left;
+            }
+
+            th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            }
+
+            th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            }
+
+            tr:nth-child(even) {
+            background-color: #f9f9f9;
+            }
+
+            tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="StatusBar">This is a test page.</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>userId</th>
+                <th>title</th>
+                <th>body</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+</body>
+<script>
+    let request = new XMLHttpRequest();
+    request.open("GET", "https://jsonplaceholder.typicode.com/posts");
+    request.onreadystatechange = function() {
+        let statusbar = document.getElementById("StatusBar");
+        if (request.readyState < 4) {
+            statusbar.innerHTML = "Data is loading.";
+        }
+        if (request.readyState === 4 && request.status === 200) {
+            statusbar.innerHTML = "Data Loaded."
+            let records = JSON.parse(request.responseText);
+            let element = document.getElementById("table-body");
+            for (let i = 0; i < records.length; i++) {
+                let row = document.createElement("tr");
+
+                let cellId = document.createElement("td");
+                cellId.textContent = records[i].id;
+                row.appendChild(cellId);
+
+                let cellUserId = document.createElement("td");
+                cellUserId.textContent = records[i].userId;
+                row.appendChild(cellUserId);
+
+                let cellTitle = document.createElement("td");
+                cellTitle.textContent = records[i].title;
+                row.appendChild(cellTitle);
+
+                let cellBody = document.createElement("td");
+                cellBody.textContent = records[i].body;
+                row.appendChild(cellBody);
+
+                element.appendChild(row);
+            };
+        }
+    }
+    request.send();
+</script>
+</html>
