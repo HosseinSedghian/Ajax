@@ -76,7 +76,7 @@ project-root/
 2. Navigate to the project folder:
 
    ```bash
-   cd your-repository-name
+   cd Ajax
    ```
 
 3. Open `index.html` in your browser.
