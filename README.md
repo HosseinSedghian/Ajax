@@ -36,7 +36,7 @@ The API returns a list of posts in JSON format with the following structure:
 
 * **HTML5** – Structure of the page
 * **CSS3** – Styling the table and layout
-* **JavaScript (Vanilla JS)** –
+* **JavaScript** –
 
   * AJAX request (XMLHttpRequest / Fetch API)
   * DOM manipulation
