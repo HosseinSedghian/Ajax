@@ -11,14 +11,6 @@ The project demonstrates how to:
 
 ---
 
-## 🔗 Live Demo
-
-You can view the live version of this project via **GitHub Pages**:
-
-> *Add your GitHub Pages link here*
-
----
-
 ## 📌 API Used
 
 This project uses the free public API provided by **JSONPlaceholder**:
