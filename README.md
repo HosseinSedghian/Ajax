@@ -70,7 +70,7 @@ project-root/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/Hosseinsedghian/Ajax.git
    ```
 
 2. Navigate to the project folder:
